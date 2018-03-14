@@ -7,3 +7,13 @@
 # Temporary files
 .sass-cache/
 .jekyll-metadata
+
+# node
+node_modules
+npm-debug.log
+yarn.lock
+
+# mac
+.DS_Store
+*/.DS_Store
+*/*/.DS_Store
