@@ -1,1 +1,1 @@
-### http://memotail.com
+Memotail blog: memotail.com

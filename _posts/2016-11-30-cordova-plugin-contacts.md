@@ -169,7 +169,7 @@ tags:
 - options   {ContactFindOptions}    删选条件，若不需要删选，则不用传递该对象
 
 
-```js
+```javascript
 
 // 从联系人全称、名称、手机号码中，获取所有关键字为’陈’的联系人
 const fields = [
@@ -213,7 +213,7 @@ navigator.contacts.find(fields, (result) => {
 
 ## 综合例子
 
-```js
+```javascript
 
 // 保存某个联系人到手机通讯录
 createContact({

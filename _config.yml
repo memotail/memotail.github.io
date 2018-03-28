@@ -1,118 +1,79 @@
-# Base blog settings
-baseurl                      : "/" # the subpath of your site,                         # e.g. /blog/
-                              # set to '' in case of hosting on GitHub
-url                          : "" # the base hostname & protocol for your site
-                                  # `http://<username>.github.io` - for GitHub
+# Site settings 配置站点
+title: 'Memotail'
+description: '专注前端领域，喜欢折腾'
+keyword: '前端, 前端开发, 前端博客, javascript, react, redux, nodejs'
+url: 'http://memotail.com' # your host
 
-blog:
-  title                      : "Memotail"
-  description                  : >
-                               frontend
+# if you don't need baseurl, you should leave this value blank.
+baseurl: ''
 
-# Layout configuration
-  logo_path                  : "assets/img/dactl.svg" # path to logo file
-  search_path                : # "yourgitusername.github.io"
-                               # needed for searchbox in archive page
-  hero_layout                : true # turn on hero layout for blog and posts
-  hero_placeholder           : "assets/img/generic_hero.jpg" # placeholder for hero image
-  excerpts                   : true # show excerpts instead of full post content on blog page
-  inline_footnotes           : true # enable/disable barefoot inline footnotes
-  titles_only                : false # show post titles only on main blog page
+# Navigation links
+nav:
+  home: '/'
+  tags: '/tags.html'
 
-# Fonts
-  font                       : '"Rubik", -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif'
-  load_google_fonts          : 'Rubik:400,400italic,700,700italic'
+# Footer
+footer:
+  since: 2018
 
+# Author 配置博主信息
+author: '郭永龙'
+nickname: 'Memotail'
+bio: '专注前端领域，喜欢折腾'
+avatar: '/assets/img/profile.png'
 
-# Author info
-author:
-  fullname                  : Memotail
-  rss                       : true # generate RSS feed and show it's icon in header
-  mail                      : memotail@163.com # change to your e-mail address
-  # twitter                   : twitter-user-name
-  github                    : memotail
-  # youtube                   : youtube-user-name
-  # stackoverflow             : stackoverflow-user-name
-  disqus                    : dactl # your disqus site name
-  google_analytics          : # 'UA-XXXXXXXX-X'
-  photo                     : "uploads/me2.png"
-  photo2x                   : "uploads/me.png"
+# Search
+search: true
 
+# Night mode
+nightMode: true
 
+# Comments 评论功能
+comments:
+  disqus: false
+  disqus_url: ''
 
-## !!
-## Advanced blog settings
-## You should not change anything here unless you know what you are doing
+# MathJax 公式支持 by Ray-Eldath
+mathjax: true
 
-# Gems
-plugins:
-  - jekyll-paginate
-  - jekyll-sitemap
+# Share
+social-share: true
+social-share-items: ['wechat', 'weibo', 'douban']
 
-# Permalinks
-permalink                    : posts/:slug
+# theme color 主题皮肤
+theme-color: 'default'  # pink or default
 
-# Posts
-excerpt_separator            : <!–-break-–>
+# Post header background patterns (when the post no cover): circuitBoard, overlappingCircles, food, glamorous, ticTacToe, seaOfClouds
+postPatterns: 'circuitBoard'
 
-# Pagination
-paginate                     : 5
-paginate_path                : '/page-:num/'
+# SNS settings 配置社交网站
+# url: email, weibo, zhihu, twitter, instagram, juejin, github, douban, facebook, dribble, uicn, jianshu, medium, linkedin
+sns:
+  weibo: ''
+  juejin: ''
+  zhihu: '//www.zhihu.com/people/guo-yong-long'
+  github: '//github.com/memotail'
 
-# Tags
-collections:
-  my_tags:
-    output: true
-    permalink: /tag/:slug/
-defaults:
-  -
-    scope:
-      path: ""
-      type: my_tags
-    values:
-      layout: blog-by-tag
+# Tags 设置标签
+recommend-tags: true # whether or not display recommend-tags on the sidebar
+recommend-condition-size: 12 # a tag will be recommended if the size of it is more than this value
 
-# Handling Reading
-exclude                    : ["README.md", "README.html"]
+# Build settings
+paginate: 6
+paginate_path: 'page:num'
+exclude: ['node_modules', 'dev', 'package.json', 'gulpfile.js', '.gitignore', 'README.md']
 
-# https://github.com/jekyll/jekyll/issues/4619
-# Markdown and highlighter settings
+# Markdown
 markdown: kramdown
-# !github-pages! mandatory › https://help.github.com/articles/using-jekyll-with-pages/#configuration-settings-you-cannot-change
-# Since Jekyll 3 the default highlighter is Rouge (replaced Pygments.rb in v44)
 highlighter: rouge
-
-# More › http://kramdown.gettalong.org/quickref.html
-# Options › http://kramdown.gettalong.org/options.html
 kramdown:
-  input:          GFM
-  # https://github.com/jekyll/jekyll/pull/4090
-  syntax_highlighter: rouge
+  input: GFM
 
-  # Rouge Highlighter in Kramdown › http://kramdown.gettalong.org/syntax_highlighter/rouge.html
-  # span, block element options fall back to global
-  syntax_highlighter_opts:
-    # Rouge Options › https://github.com/jneen/rouge#full-options
-    # css_class: 'highlight'
-    #line_numbers: true # bad idea, spans don't need linenos and would inherit this option
-    span:
-      line_numbers: false
-    block:
-      line_numbers: true
-      start_line: 1
+# RSS
+RSS: false
 
-# Sass settings
-sass:
-  sass_dir                : _sass
-  style                   : compressed # http://sass-lang.com/documentation/file.SASS_REFERENCE.html#output_style
+# Permalink
+permalink: /:year/:month/:day/:title.html
 
-# HTML Compression
-# - http://jch.penibelst.de/
-compress_html:
-  clippings               : all
-  endings                 : all
-  comments                : ["<!-- ", " -->"]
-  blanklines              : true
-  profile                 : false
-  ignore:
-  envs                    : [local]
+# Plugins
+plugins: [jekyll-paginate]
